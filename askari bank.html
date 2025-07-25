@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project ASKARI BANK Revamp</title>
+    <link rel="stylesheet" href="askari bank.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul class="navbar">
+            <a href="index.html"><i class="fa-solid fa-house"></i></a>
+        </ul>
+    </nav>
+
+    <!-- Project Case Study Content -->
+    <div class="content">
+        <section id="about" class="section-card">
+            <h2>Project Name and Duration</h2>
+            <p><strong>Askari Bank</strong> – Mobile Banking Redesign (Practice Project)<br>
+                <strong>Duration</strong>: 1 week (April 2025)</p>
+        </section>
+
+        <section id="services" class="section-card">
+            <h2>My Role</h2>
+            <p><strong>UX/UI Designer</strong> – Responsible for user research, wireframing, prototyping, and UI design using Figma.</p>
+        </section>
+
+        <section id="portfolio" class="section-card">
+            <h2>Project Goal</h2>
+            <p>The goal was to modernize and simplify the mobile banking experience for Askari Bank users. The existing design appeared cluttered and unintuitive, especially for first-time users. This redesign aims to improve usability, visual hierarchy, and accessibility for a smoother banking experience.</p>
+        </section>
+
+        <section id="contact" class="section-card">
+            <h2>Research & Insights</h2>
+<p>While going through the original Askari Bank app, I noticed that the design felt quite cluttered and heavy. So, I decided to dig deeper by checking user feedback on app stores and forums. Here’s what stood out:</p>
+<ul>
+  <li><strong>Too much going on:</strong> Screens were packed with information, which made it hard for users to focus on what really mattered.</li>
+  <li><strong>No clear flow:</strong> Important actions and info weren’t placed in an order that made sense, so things felt a bit all over the place.</li>
+</ul>
+<p>With all that in mind, I went for a <strong>clean and minimal design</strong> that’s easier on the eyes and helps users get things done without feeling overwhelmed.</p>
+        </section>
+
+        <section class="section-card">
+            <h2>Intended Audience</h2>
+            <p><strong>Primary Users</strong>: Everyday banking customers (ages 20–50) who use the mobile app for balance checks, fund transfers, and bill payments.
+            <strong>Secondary Users</strong>: Elderly customers who value clarity, simplicity, and security in digital experiences.</p>
+        </section>
+
+        <section class="section-card">
+            <h2>Sketches or Wireframes</h2>
+            <div class="wireframe">
+                <div class="image-container">
+                    <img src="AB1.png" alt="Wireframe 1">
+                </div>
+            </div>
+          </section>
+        <section class="section-card">
+            <h2>User Testing Results</h2>
+<p>Since this was a practice project, informal feedback was gathered from peers familiar with mobile banking apps. Key takeaways:</p>
+<ul>
+  <li><strong>Navigation flow:</strong> Users appreciated the improved navigation structure and logical grouping of features.</li>
+  <li><strong>Visual design:</strong> The modern UI and consistent styling made the app feel more trustworthy and easier to use.</li>
+  <li><strong>Clarity:</strong> Clear CTAs and better information hierarchy led to faster task completion in the prototype.</li>
+</ul>
+
+        </section>
+
+        <section class="section-card">
+            <h2>Final Design</h2>
+            <div class="image-container">
+                <img src="AB2.png" alt="Final Design Preview">
+            </div>
+        </section>
+
+        <!-- <section class="section-card">
+            <h2>Prototype Demonstration</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="ABV.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section> -->
+        
+        <section class="section-card">
+            <h2>Conclusion</h2>
+            <p>This project was an excellent opportunity to explore design improvements for financial apps in Pakistan. It deepened my understanding of how simplicity and clarity play a key role in mobile banking. If given real user data and access to stakeholder feedback, this design could be evolved into a functional concept with measurable impact.</p>
+        </section>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+      
+        function slide(direction) {
+          const slider = document.querySelector('.slider');
+          const images = document.querySelectorAll('.slider img');
+          const total = images.length;
+      
+          currentIndex += direction;
+      
+          if (currentIndex < 0) {
+            currentIndex = total - 1;
+          } else if (currentIndex >= total) {
+            currentIndex = 0;
+          }
+      
+          const offset = -currentIndex * 100;
+          slider.style.transform = `translateX(${offset}%)`;
+        }
+      </script>
+
+    <script>
+        const slider = document.getElementById('customSlider');
+        const slides = document.querySelectorAll('#customSlider .slide');
+        let index = 0;
+    
+        function updateSliderClasses() {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+            slide.classList.add('active'); // Current slide
+            }
+        });
+        }
+    
+        function moveSlider() {
+        index++;
+        if (index >= slides.length) {
+            index = 0; // Restart from the first slide
+        }
+        updateSliderClasses();
+        slider.style.transform = `translateX(-${index * 33.33}%)`;
+        }
+    
+        setInterval(moveSlider, 3000); // Slide every 3 seconds
+        updateSliderClasses(); // Initialize classes
+    </script>
+      
+</body>
+
+</html>

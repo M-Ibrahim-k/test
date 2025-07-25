@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project DARAZ</title>
+    <link rel="stylesheet" href="daraz.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul class="navbar">
+            <a href="index.html"><i class="fa-solid fa-house"></i></a>
+        </ul>
+    </nav>
+
+    <!-- Project Case Study Content -->
+    <div class="content">
+        <section id="about" class="section-card">
+            <h2>Project Name and Duration</h2>
+            <p><strong>DARAZ</strong> – Application Redesign (Practice Project)<br>
+                <strong>Duration</strong>: 1 week (April 2025)</p>
+        </section>
+
+        <section id="services" class="section-card">
+            <h2>My Role</h2>
+            <p><strong>UX/UI Designer</strong> – Led the redesign of the mobile app with a focus on improving the user experience through a cleaner UI, better navigation, and more intuitive interactions.</p>
+        </section>
+
+        <section id="portfolio" class="section-card">
+            <h2>Project Goal</h2>
+            <p>The goal of this project was to practice enhancing the user experience of a popular e-commerce app by simplifying its interface and improving usability. The redesign aimed to address common e-commerce app issues like navigation complexity, visual clutter, and an inefficient checkout process.</p>
+        </section>
+
+        <section id="contact" class="section-card">
+            <h2>Research & Insights</h2>
+            <p>I conducted self-led research by analyzing the existing app and reviewing user reviews on app stores to identify pain points and areas of improvement. Key insights included:</p>
+
+<ul>
+  <li><strong>Navigation issues:</strong> Users found it hard to quickly find products or categories.</li>
+  <li><strong>Cluttered design:</strong> The interface was overwhelming, making it difficult for users to focus on important details.</li>
+  <li><strong>Checkout problems:</strong> The checkout process felt complicated, leading to cart abandonment.</li>
+</ul>
+        </section>
+
+        <section class="section-card">
+            <h2>Intended Audience</h2>
+            <p>The intended audience for the Daraz app includes e-commerce shoppers, primarily individuals looking for a convenient, user-friendly online shopping experience. This includes:</p>
+
+            <ul>
+              <li><strong>Tech-savvy young adults (18-35 years old):</strong> Who are comfortable navigating mobile apps for shopping.</li>
+              <li><strong>Busy professionals:</strong> Who prefer a fast, efficient shopping experience with quick checkout and easy access to product information.</li>
+              <li><strong>Frequent online shoppers:</strong> Looking for variety and seamless product discovery.</li>
+              <li><strong>Users with different levels of tech experience:</strong> Ensuring the app is intuitive and easy for everyone, from beginners to more experienced online shoppers.</li>
+            </ul>
+            
+            <p>The redesign was intended to make shopping more enjoyable, faster, and less overwhelming for all users, with a focus on simplified navigation, clear product presentation, and smooth checkout flow.</p>
+        </section>
+
+        <section class="section-card">
+            <h2>Sketches or Wireframes</h2>
+            <div class="wireframe">
+                <div class="image-container">
+                    <img src="D1.png" alt="Wireframe 1">
+                </div>
+            </div>
+          </section>
+        <section class="section-card">
+            <h2>User Testing Results</h2>
+            <p>Although formal user testing was not conducted for this practice project, I performed <strong>informal testing</strong> by reviewing the redesign with a small group of peers and seeking feedback from users who were familiar with the original Daraz app. This feedback provided valuable insights:</p>
+
+<ul>
+  <li><strong>Improved Navigation:</strong> Test users found the simplified navigation much easier to use, especially when finding specific categories or products. The clear hierarchy and streamlined layout helped users focus on key tasks.</li>
+  <li><strong>Checkout Flow:</strong> The new, simplified checkout process received positive feedback for being more intuitive, with fewer steps and clearer options, which is crucial for reducing cart abandonment.</li>
+  <li><strong>Visual Appeal:</strong> The minimalist design approach was well-received, with users commenting that the app felt less cluttered and more modern, leading to a more pleasant shopping experience.</li>
+  <li><strong>Mobile Responsiveness:</strong> The mobile version of the app worked seamlessly, with users highlighting how easy it was to browse products and make purchases without glitches.</li>
+</ul>
+
+<p>Based on the feedback, it was clear that the redesign addressed many of the key pain points identified during the initial analysis, and it aligned well with the needs of the target audience.</p>
+        </section>
+
+        <section class="section-card">
+            <h2>Final Design</h2>
+            <div class="image-container">
+                <img src="D2.png" alt="Final Design Preview">
+            </div>
+        </section>
+
+        <!-- <section class="section-card">
+            <h2>Prototype Demonstration</h2>
+            <div class="video-container">
+                <video id="video-player" controls>
+                    <source src="ABV.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section> -->
+        
+        
+        
+        <section class="section-card">
+            <h2>Conclusion</h2>
+            <p>The redesign of the Daraz app helped me refine my skills in UX/UI design, focusing on simplifying user journeys and enhancing the overall experience. By addressing key pain points such as navigation issues, cluttered design, and a complicated checkout process, the final design aimed to make shopping more intuitive, faster, and enjoyable for all users. This project gave me valuable insights into designing for e-commerce platforms, with a focus on improving accessibility and creating a smoother, more engaging user experience.</p>
+        </section>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+      
+        function slide(direction) {
+          const slider = document.querySelector('.slider');
+          const images = document.querySelectorAll('.slider img');
+          const total = images.length;
+      
+          currentIndex += direction;
+      
+          if (currentIndex < 0) {
+            currentIndex = total - 1;
+          } else if (currentIndex >= total) {
+            currentIndex = 0;
+          }
+      
+          const offset = -currentIndex * 100;
+          slider.style.transform = `translateX(${offset}%)`;
+        }
+      </script>
+
+    <script>
+        const slider = document.getElementById('customSlider');
+        const slides = document.querySelectorAll('#customSlider .slide');
+        let index = 0;
+    
+        function updateSliderClasses() {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+            slide.classList.add('active'); // Current slide
+            }
+        });
+        }
+    
+        function moveSlider() {
+        index++;
+        if (index >= slides.length) {
+            index = 0; // Restart from the first slide
+        }
+        updateSliderClasses();
+        slider.style.transform = `translateX(-${index * 33.33}%)`;
+        }
+    
+        setInterval(moveSlider, 3000); // Slide every 3 seconds
+        updateSliderClasses(); // Initialize classes
+    </script>
+      
+</body>
+
+</html>

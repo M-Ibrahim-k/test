@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ibrahim Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/2e744e38b8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      .certifications-list {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        margin-top: 20px;
+      }
+      .cert-card {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        background: #f7f7f7;
+        padding: 16px 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      }
+      .cert-logo {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+      }
+      .cert-status {
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 0.95em;
+        font-weight: 600;
+      }
+      .cert-status.completed {
+        color: #4caf50;
+      }
+      .cert-status.ongoing {
+        color: #ff9800;
+      }
+      .cert-link {
+        margin-left: 15px;
+        color: #1976d2;
+        text-decoration: underline;
+        font-size: 0.95em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <!-- <img src="logo.png" class="logo"> -->
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#Services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+          <p>UX Designer</p>
+          <h1>Hi, I'm <span>Muhammad <br>Ibrahim Khan</span></h1>
+        </div>
+      </div>
+    </div>
+    <!-- ------About------ -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="ME.jpg" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              Aspiring UX designer passionate about crafting intuitive, user-centric digital experiences. Skilled in design thinking, usability, and problem-solving, I merge creativity with analytical insights to enhance user interactions. Proficient in Figma and Canva, with a sharp eye for detail and a continuous drive for learning. Eager to contribute innovative, user-focused solutions in dynamic, forward-thinking teams.
+            </p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('Skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('Experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('Education')">Education</p>
+              <p class="tab-links" onclick="opentab('Certifications')">Certifications</p>
+            </div>
+            <div>
+              <div class="tab-contents active-tab" id="Skills">
+                <ul>
+                  <li><span>*UI/UX</span><br />Designing Web/App Interfaces</li>
+                  <li><span>DEVELOPMENT</span><br />Front-End Collaboration</li>
+                </ul>
+              </div>
+              <div class="tab-contents" id="Experience">
+                <ul>
+                  <li>
+                    <span>Fauji Fertilizer Bin Qasim
+                      Ltd(FFBL)</span><br />Information and Communication Technology Intern
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-contents" id="Education">
+                <ul>
+                  <li><span>SCHOOLING</span><br />Roots School System</li>
+                  <li><span>MATRICULATION</span><br />Global School System</li>
+                  <li>
+                    <span>INTERMEDIATE</span><br />Fauji Foundation College
+                  </li>
+                  <li>
+                    <span>BACHELORS</span><br />B.Sc in Software Engineering
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-contents" id="Certifications">
+                <ul>
+                  <li>
+                    <span><strong>GOOGLE</strong></span> Project Management (Ongoing)
+                  </li>
+                  <li>
+                    <span><strong>GOOGLE</strong></span>  UX Design<br />
+                  </li>
+                  <li>
+                    <span><strong>GOOGLE</strong></span> Cybersecurity Professional</strong>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ----SERVICES---- -->
+    <div id="Services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div onclick="openModal('webDesignModal')">
+            <i class="fa-solid fa-display"></i>
+            <h2>WEB DESIGN</h2>
+            <p>Creating engaging websites with a focus on aesthetics, usability, and responsive design for an exceptional user experience.</p>
+          </div>
+          <div onclick="openModal('developmentModal')">
+            <i class="fa-solid fa-mobile-screen"></i>
+            <h2>APP DESIGN</h2>
+            <p>Designing intuitive mobile applications with seamless user flows and modern UI elements, ensuring an enjoyable and accessible experience.</p>
+          </div>
+          <div onclick="openModal('appDesignModal')">
+            <i class="fa-solid fa-code"></i>
+            <h2>DEVELOPMENT</h2>
+            <p>Building dynamic, data-driven web applications with a focus on real-time functionality and performance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="webDesignModal" class="modal">
+      <div class="modal-content">
+        <!-- <span class="close" onclick="closeModal('webDesignModal')">&times;</span> -->
+        <h2 id="heading">
+          <i class="fa-solid fa-code"></i>
+          WEB DESIGN
+        </h2><br>
+        <p>A well-crafted website is more than just visuals—it’s an experience that guides users effortlessly. By focusing on aesthetics, usability, and brand identity, I design engaging and intuitive websites that leave a lasting impact. Every element, from layout to typography, is thoughtfully structured to enhance accessibility and create a seamless browsing journey. With a strong emphasis on responsiveness, the designs ensure consistency across all screen sizes, delivering both beauty and functionality.
+        </p>
+      </div>
+    </div>
+
+    <div id="developmentModal" class="modal">
+      <div class="modal-content">
+        <!-- <span class="close" onclick="closeModal('developmentModal')">&times;</span> -->
+        <h2 id="heading">
+          <i class="fa-solid fa-code"></i>
+          App Design
+        </h2><br>
+        <p>A great app is built on the foundation of smooth interactions and intuitive user flows. Through in-depth research and a user-first approach, I design mobile applications that simplify complex processes and provide an enjoyable experience. From wireframing to high-fidelity designs, each step is carefully planned to balance aesthetics with functionality. Accessibility, ease of use, and modern UI trends are integrated to create apps that users love to engage with.
+        </p>
+      </div>
+    </div>
+
+    <div id="appDesignModal" class="modal">
+      <div class="modal-content">
+        <!-- <span class="close" onclick="closeModal('appDesignModal')">&times;</span> -->
+        <h2 id="heading">
+          <i class="fa-solid fa-code"></i>
+          Development
+        </h2><br>
+        <p>Transforming ideas into fully functional web applications requires the right balance of innovation and efficiency. Using <strong>React</strong> and <strong>Firebase</strong>, I develop scalable solutions that ensure real-time updates, seamless data management, and a smooth user experience. Each project is optimized for performance, security, and long-term adaptability, ensuring that the final product is not just visually appealing but also technically robust. Whether it's authentication, cloud storage, or dynamic content rendering, every component is built with precision to enhance both usability and reliability.
+        </p>
+      </div>
+    </div>
+    <!-- ------portfolio------- -->
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="working">
+
+          <div class="work-list">
+            <a href="Property.html">
+            <div class="work">
+              <img src="./Property logo.png" />
+              <div class="layer">
+                <h3>Technologia Task</h3>
+                <p>
+                  A premium real estate landing page redesign built from Flippmode's content and Offmarket's visual language—crafted for conversion, trust, and seamless property browsing.
+                </p>
+              </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="work-list">
+            <a href="JAVVY.html">
+            <div class="work">
+              <img src="./Javvy logo.jpg" />
+              <div class="layer">
+                <h3>JAVVY</h3>
+                <p>
+                  Enhancing the coffee shopping experience through a premium product page redesign focused on visual storytelling, and conversion optimization.
+                </p>
+                
+              </div>
+            </div>
+          </a>
+          </div>
+          
+
+          <div class="work-list">
+            <a href="daraz.html">
+            <div class="work">
+              <img src="./Daraz Logo.png" />
+              <div class="layer">
+                <h3>DARAZ</h3>
+                <p>Enhancing the UX of Pakistan’s leading e-commerce platform by improving navigation, checkout flow, and overall usability for a seamless shopping experience.</p>
+              </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="work-list">
+            <a href="askari bank.html">
+            <div class="work">
+              <img src="./askari bank.png" />
+              <div class="layer">
+                <h3>ASKARI BANK</h3>
+                <p>Redesigning the mobile banking experience with a modern UI, intuitive navigation, and user-friendly features to improve accessibility and engagement.</p>
+              </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="work-list">
+            <a href="CodeCross.html">
+            <div class="work">
+              <img src="./codecross_logo-removebg-preview.png" />
+              <div class="layer">
+                <h3>CODE CROSS</h3>
+                <p>Redesigning a corporate website with a minimalist UI, clear structure, and modern design to enhance user experience and align with the brand’s professional identity."</p>
+              </div>
+            </div>
+          </a>
+          </div>
+
+   
+          <div class="work-list">
+            <a href="SHUFTI.HTML">
+            <div class="work">
+              <img src="./Shufti Logo.png" />
+              <div class="layer">
+                <h3>SHUFTI</h3>
+                <p>
+                  A thoughtful redesign of Shufti’s login flow—enhancing trust while introducing people, profiles, and platform services in a subtle, user-centered way.
+                </p>
+              </div>
+            </div>
+          </a>
+          </div>
+        
+       
+
+            <div class="work-list">
+            <a href="FFBL.HTML">
+            <div class="work">
+              <img src="./FFBL LOGO.jpg" />
+              <div class="layer">
+                <h3>FFBL</h3>
+                <p>
+                  Designed a functional and accessible internal portal for FFBL to streamline HR workflows, leave management, and internal communication across departments.
+                </p>
+              </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="work-list">
+            <a href="uts.html" class="work">
+              <img src="UTS LOGO.png" />
+              <div class="layer">
+                <h3>Usama Transport Solution</h3>
+                <p>A university-focused transport management system for students and faculty.</p>
+              </div>
+            </a>
+          </div>
+          
+        </div>
+        <a href="#" class="btn" id="togglePortfolio">See more</a>
+      </div>
+    </div>
+    <!-- ----------Contact---------- -->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p>
+              <i class="fa-solid fa-paper-plane"></i
+              >Muhammad.Ibrahim.k@protonmail.com
+            </p>
+            <p><i class="fa-solid fa-phone-volume"></i>+92-311-2707222</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/muhammadibrahim.khan.146612/"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/muhammad-ibrahimkhan/"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a href="https://www.instagram.com/ibbziz/?hl=en"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </div>
+            <a href="IBRAHIM RESUME.pdf" download class="btn2">Download CV</a>
+          </div>
+          <div class="contact-right"></div>
+          <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Your Name" required />
+            <input type="email"name="Email"placeholder="Your Email"required/>
+            <textarea name ="Message"rows="6"placeholder="Your Message"></textarea>
+            <button type="submit" class="btn2">Submit</button>
+          </form>
+          <span id="msg"></span>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>
+          Copyright <i class="fa-solid fa-copyright"></i> Made by IBBI<i
+            class="fa-solid fa-code"
+          ></i
+          >.
+        </p>
+      </div>
+    </div>
+    
+    <script src="index.js"></script>
+    <script>
+      // Example: Show/hide extra portfolio items
+      const toggleBtn = document.getElementById('togglePortfolio');
+      const workingSection = document.querySelector('.working');
+      let expanded = false;
+
+      toggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Toggle a class or show/hide extra items as per your logic
+        workingSection.classList.toggle('expanded');
+        expanded = !expanded;
+        toggleBtn.textContent = expanded ? '▲' : '▼';
+      });
+    </script>
+  </body>
+</html>
